@@ -1,18 +1,24 @@
-drop database if exists sorteo_atlantida;
-create database if not exists  sorteo_atlantida;
-use sorteo_atlantida;
+DROP DATABASE if exists sorteo_atlantida;
+CREATE DATABASE if not exists  sorteo_atlantida;
+USE sorteo_atlantida;
 
-create table alumnos(
-	IDA int auto_increment,
-    apellido varchar(20),
-    nombre varchar(20),
-    DNI int,
-    fecha date,
-    primary key (IDA)
-    );
+CREATE TABLE participantes(
+	IDA INT NOT NULL auto_increment,
+    DNI INT NOT NULL,
+    nombre VARCHAR(20) NOT NULL,
+    apellido VARCHAR(20) NOT NULL,
+    fecha DATE NOT NULL,
+    PRIMARY KEY (IDA));
 
-select * from alumnos;
-insert into alumnos (apellido, nombre, DNI) values 
+CREATE TABLE winners_history(
+    IDW INT auto_increment,
+    DNI INT NOT NULL,
+    dateWin DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(DNI) REFERENCES participantes(DNI)
+    PRIMARY KEY(IDW));
+
+SELECT * FROM participantes;
+INSERT INTO participantes (apellido, nombre, DNI) VALUES 
 ( "Noriega", "Ludmila", 45485190),
 ( "Miotti", "Ayrton Emanuel Jesús", 45855966),
 ( "Nieto", "Facundo", 44855966),
@@ -24,6 +30,6 @@ insert into alumnos (apellido, nombre, DNI) values
 ( "Bazan", "Ana Luz", 66777888);
 
 
-SELECT * FROM alumnos WHERE IDA >= RAND() * 
-    ( SELECT MAX(IDA) FROM alumnos ) 
+SELECT * FROM participantes WHERE IDA >= RAND() * 
+    ( SELECT MAX(IDA) FROM participantes ) 
 ORDER BY IDA LIMIT 5;

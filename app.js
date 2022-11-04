@@ -34,7 +34,7 @@ app.use(session({
 
 // 7 - Rutas
 app.get('/', (req, res)=>{
-    return res.render('SNHome');
+    return res.render('home');
 })
 
 

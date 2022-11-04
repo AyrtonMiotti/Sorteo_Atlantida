@@ -1,17 +1,26 @@
 const express = require("express");
 const router = express.Router();
 
-const participanteController = require("../controllers/pController");
+const partController = require("../controllers/pController");
 
-router.get("/", participanteController.listParticipantes);
+router.get("/", partController.listParticipantes);
 
 // Participantes
-router.post("/add", participanteController.saveParticipante);
-router.get("/delete/:cod_par", participanteController.deleteParticipante);
-router.get("/edit/:cod_par", participanteController.editParticipante);
-router.post("/update/:cod_par", participanteController.updateParticipante);
-router.get("/sortear", participanteController.sortearParticipantes)
-router.get("/historialGanadores", participanteController.historialGanadores);
-router.get("/deleteGanador/:cod_par", participanteController.deleteGanador);
+router.post("/add", partController.saveParticipante);
+router.get("/delete/:cod_par", partController.deleteParticipante);
+router.get("/edit/:cod_par", partController.editParticipante);
+router.post("/update/:cod_par", partController.updateParticipante);
+router.get("/sortear", partController.sortearParticipantes)
+router.get("/historialGanadores", partController.historialGanadores);
+router.get("/deleteGanador/:cod_par", partController.deleteGanador);
 
 module.exports = router;
+
+
+/*++++++++++++++++++++*/ 
+router.get('/', partController.showParticipants);
+router.get('/winners', partController.shoWinners);
+
+router.get('/participantes', (req, res)=>{
+    return res.render('nh2');
+})

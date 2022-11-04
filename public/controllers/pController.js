@@ -1,8 +1,10 @@
 const controller = {};
 const connection = require('./database/db');
 
-// Consultar Participantes
-controller.listParticipantes = (req, res) => {
+//____________________________PARTICIPANTES____________________________
+
+// Consultar
+controller.showParticipants = (req, res) => {
     connection.query("SELECT * FROM participantes", (error, results) => {
         if (error) {
             res.json(error);
@@ -12,75 +14,66 @@ controller.listParticipantes = (req, res) => {
     });
 }
 
-
-/* Consultar Ganadores
-controller.historialGanadores = (req, res) => {
-    connection.query("SELECT * FROM historial_ganadores", (error, results) => {
-        if (error) {
-            res.json(error);
-        } else {
-            res.render("historialGanadores", {data: results});
-        }
-    });
-}
-
-
-// Eliminar Ganador
-controller.deleteGanador = (req, res) => {
-    const cod_par = req.params.cod_par;
-    connection.query("DELETE FROM historial_ganadores WHERE cod_par = ?", [cod_par], (error, results)=>{
-        if (error) {
-            res.json(error);
-        } else {
-            res.redirect("/historialGanadores");         
-        }
-    });
-}
-
-
-// Sortear
-controller.sortearParticipantes = (req, res) => {
-    connection.query(`
-    SELECT p.cod_par, p.nombre_par, p.apellido_par, p.ultimos_dni_par
-    FROM participantes p
-    LEFT JOIN historial_ganadores g ON p.cod_par = g.cod_par
-    WHERE g.cod_par IS NULL 
-    ORDER BY RAND() LIMIT 3
-    `, (error, results) => {
+//SORTEAR
+controller.raffle = (req, res) => {
+    connection.query("ACA VA LO Q HIZO LUDMI", (error, results) => {
         if (error) {
             res.json(error);
         } else {
             results.forEach((ganador) => {
                 connection.query(`INSERT INTO historial_ganadores SET ?`, ganador)
             })
-            res.render("showGanadores", {data: results});
+            res.render("", {data: results}); //nexthome?
         }
     })
+} 
+
+//CARGAR
+controller.insertParticipant = (req, res) => {
+    const DNI = req.body.DNI;
+    const mombre = req.body.nombre;
+    const apellido = req.body.apellido;
+
+    connection.query('INSERT INTO alumnos (DNI, nombre, apellido) VALUES(' + DNI + ",'" + nombre + "','" + apellido + "');", (error, results) => {
+        if (error) {
+            res.json(error);
+        } else {
+            res.redirect("/");  // Pestaña de agregar participante       
+        }       
+    });
+
 }
 
-
-// Guardar Participante
-controller.saveParticipante = (req, res) => {
-    const ultimos_dni_par = req.body.ultimos_dni_par;
-    const nombre_par = req.body.nombre_par;
-    const apellido_par = req.body.apellido_par;
-    
-    connection.query("INSERT INTO participantes SET ?", 
-        {
-            ultimos_dni_par:ultimos_dni_par, 
-            nombre_par:nombre_par, 
-            apellido_par:apellido_par, 
-        }, (error, results) => {
-            if (error) {
-                res.json(error);
-            } else {
-                res.redirect("/");         
-            }
+//______________________________GANADORES______________________________
+// VER
+controller.shoWinners = (req, res) => {
+    connection.query("SELECT * FROM winners_history", (error, results) => { //Crear la tabla.
+        if (error) {
+            res.json(error);
+        } else {
+            res.render("nh2", {data: results}); //Cambiar a Pestaña donde se muestran los ganadores.
         }
-    );
+    });
+}
+
+//Eliminar
+controller.deleteWinner = (req, res) => {
+    const IDA = req.params.IDA;
+    connection.query("DELETE FROM winners_history WHERE cod_par = ?", [IDA], (error, results)=>{
+        if (error) {
+            res.json(error);
+        } else {
+            res.redirect("/"); //Pestaña donde c muestran losganadores C.
+        }
+    });
 }
 
 
+
+
+
+
+/*
 // Editar Participante
 controller.editParticipante = (req, res) => {
     const cod_par = req.params.cod_par;

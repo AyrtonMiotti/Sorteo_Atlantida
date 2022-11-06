@@ -3,7 +3,7 @@ const router = express.Router();
 
 const partController = require("../controllers/pController");
 
-router.get("/", partController.showParticipants);
+router.get("/show-Participants", partController.showParticipants);
 
 // Participantes
 router.post("/add", partController.insertParticipant);
@@ -15,17 +15,11 @@ router.get("/deleteGanador/:cod_par", partController.deleteWinner);
 
 
 
-
 /*Routes*/ 
-router.get('/', partController.showParticipants);
 router.get('/winners2', partController.shoParticipants);
 
 
-router.get('/participantes', (req, res)=>{
-    return res.render('nh2');
-})
-
-router.get('/home', (req, res) => {
+router.get('/', (req, res) => {
     return res.render('home');
 })
 

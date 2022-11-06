@@ -23,7 +23,6 @@ controller.raffle = (req, res) => {
             results.forEach((ganador) => {
                 connection.query('INSERT INTO winn_history SET ?', [ganador])
             })
-            console.log("LLegao")
             res.render("showWinners", {data: results}); 
         }
     })
@@ -81,7 +80,7 @@ controller.shoWinners = (req, res) => {
         if (error) {
             res.json(error);
         } else {
-            res.render("showWinners", {data: results}); //Cambiar a Pestaña donde se muestran los ganadores.
+            res.render("showWinners", {data2: results});
         }
     });
 }

@@ -9,9 +9,9 @@ CREATE TABLE participantes(
     PRIMARY KEY (DNI));
 
 CREATE TABLE winn_history(
-    winner INT,
+    DNI INT,
     dateWin DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (winner) REFERENCES participantes(DNI));
+    FOREIGN KEY (DNI) REFERENCES participantes(DNI));
 
 
 

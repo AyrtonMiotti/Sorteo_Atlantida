@@ -1,5 +1,5 @@
 const controller = {};
-const connection = require('./database/db');
+const connection = require('../database/db');
 
 //____________________________PARTICIPANTES____________________________
 
@@ -9,7 +9,7 @@ controller.showParticipants = (req, res) => {
         if (error) {
             res.json(error);
         } else {
-            res.render("nh2", {data: results});
+            res.render("next_home", {data: results});
         }
     });
 }
@@ -21,7 +21,7 @@ controller.raffle = (req, res) => {
             res.json(error);
         } else {
             results.forEach((ganador) => {
-                connection.query(`INSERT INTO historial_ganadores SET ?`, ganador)
+                connection.query('INSERT INTO historial_ganadores SET ?', [ganador])
             })
             res.render("", {data: results}); //nexthome?
         }
@@ -76,11 +76,11 @@ controller.deleteParticipant = (req, res) => {
 
 // VER || SHOW
 controller.shoWinners = (req, res) => {
-    connection.query("SELECT * FROM winners_history", (error, results) => { //Crear la tabla.
+    connection.query("SELECT * FROM winn_history", (error, results) => { //Crear la tabla.
         if (error) {
             res.json(error);
         } else {
-            res.render("nh2", {data: results}); //Cambiar a Pestaña donde se muestran los ganadores.
+            res.render("showWinners", {data: results}); //Cambiar a Pestaña donde se muestran los ganadores.
         }
     });
 }
@@ -88,7 +88,7 @@ controller.shoWinners = (req, res) => {
 //ELIMINAR || DELETE
 controller.deleteWinner = (req, res) => {
     const IDA = req.params.IDA;
-    connection.query("DELETE FROM winners_history WHERE cod_par = ?", [IDA], (error, results)=>{
+    connection.query("DELETE FROM winn_history WHERE cod_par = ?", [IDA], (error, results)=>{
         if (error) {
             res.json(error);
         } else {
@@ -98,6 +98,17 @@ controller.deleteWinner = (req, res) => {
 }
 //_____________________________________________________________________
 
+
+
+controller.shoParticipants = (req, res) => {
+    connection.query("SELECT * FROM participantes", (error, results) => {
+        if (error) {
+            res.json(error);
+        } else {
+            res.render("form", {data: results});
+        }
+    });
+}
 
 // EXPORT || EXPORTACION
 module.exports = controller;

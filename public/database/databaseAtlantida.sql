@@ -3,33 +3,30 @@ CREATE DATABASE if not exists  sorteo_atlantida;
 USE sorteo_atlantida;
 
 CREATE TABLE participantes(
-	IDA INT NOT NULL auto_increment,
     DNI INT NOT NULL,
     nombre VARCHAR(20) NOT NULL,
     apellido VARCHAR(20) NOT NULL,
-    fecha DATE NOT NULL,
-    PRIMARY KEY (IDA));
+    PRIMARY KEY (DNI));
 
-CREATE TABLE winners_history(
-    IDW INT auto_increment,
-    DNI INT NOT NULL,
+CREATE TABLE winn_history(
+    winner INT,
     dateWin DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY(DNI) REFERENCES participantes(DNI)
-    PRIMARY KEY(IDW));
-
-SELECT * FROM participantes;
-INSERT INTO participantes (apellido, nombre, DNI) VALUES 
-( "Noriega", "Ludmila", 45485190),
-( "Miotti", "Ayrton Emanuel Jesús", 45855966),
-( "Nieto", "Facundo", 44855966),
-( "Toledo", "Franco", 55888999),
-( "Colameo", "Tomas", 11222333),
-( "Gatica", "Mateo", 22333444),
-( "Negrete", "Martina", 33444555),
-("Bonfigli", "Martina", 44555666),
-( "Bazan", "Ana Luz", 66777888);
+    FOREIGN KEY (winner) REFERENCES participantes(DNI));
 
 
-SELECT * FROM participantes WHERE IDA >= RAND() * 
-    ( SELECT MAX(IDA) FROM participantes ) 
-ORDER BY IDA LIMIT 5;
+
+INSERT INTO participantes (DNI, nombre, apellido) VALUES 
+(45485190, "Ludmila",  "Noriega"),
+(45095311, "Ayrton",  "Miotti"),
+(44855966, "Facundo",  "Nieto"),
+(55888999, "Franco",  "Toledo"),
+(11222333, "Tomas",  "Colameo"),
+(22333444, "Mateo",  "Gatica"),
+(33444555, "Martina",  "Negrete"),
+(44555666, "Emilia", "Bonfigli"),
+(66777888, "Ana Luz",  "Bazan");
+
+
+SELECT * FROM participantes WHERE DNI >= RAND() * 
+    ( SELECT MAX(DNI) FROM participantes ) 
+ORDER BY DNI LIMIT 5;

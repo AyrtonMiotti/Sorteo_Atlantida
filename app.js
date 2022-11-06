@@ -1,3 +1,4 @@
+const {urlencoded} = require('express');
 const express = require('express');
 const app = express();
 
@@ -15,27 +16,19 @@ app.use('/resources', express.static(__dirname + '/public'));
 
 
 // 3- Settings
+app.set('views', './public/views')
 app.set('view engine', 'ejs');
 const bcryptjs = require('bcryptjs'); //Call encryption module
 //____________________________________________________________
 
 
-/*
-const session = require('express-session');
-app.use(session({
-    secret: 'secret',
-    resave: true,
-    saveUninitialized: true
-    
-}));
-*/
+// 4- Import Routes
+const partRoutes = require("./public/routes/router");
+//____________________________________________________________
 
-
-
-// 7 - Rutas
-app.get('/', (req, res)=>{
-    return res.render('home');
-})
+// 5- Routes
+app.use('/', partRoutes);
+//____________________________________________________________
 
 
 app.listen(3309, (req, res)=>{

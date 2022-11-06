@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <title>Atlantida FM | Participantes</title>
+</head>
+<body>
+  <div class="navBar">
+    <div class="home">
+      <img class="imgHome" src="./resources/assets/hogar.png" alt="home">
+    </div>
+  </div>
+  <div class="main-Container">
+    <div class="left-Container">
+        <form action="auth">
+            <div class="tittleForm"><h1 class="tittleFormH">NOC</h1></div>
+            <div class="DNIGroup">
+                <span class="SDNI">DNI</span>
+                <input type="text" class="inputDNI">
+            </div>
+            <div class="nameGroup">
+                <span class="Sname">Nombre</span>
+                <input type="text" class="inputName">
+            </div>
+            <div class="surnameGroup">
+                <span class="Ssurname">Apellido</span>
+                <input type="text" class="inputSurname">
+            </div>
+            <div class="adressGroup">
+                <span class="Sadress">Dirección</span>
+                <input type="text" class="inputAdress">
+            </div>
+            <div class="locationGroup">
+                <span class="Slocation">Localidad</span>
+                <input type="text" class="inputLocation">
+            </div>
+        </form>
+    </div>
+    <div class="right-Container">
+      <h3>PARTICIPANTES</h3>
+      <form class="formParticipants">
+        <div class="tableContainer">
+          <table id="participanTable">
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+              </tr>
+              <% if(data){ %>
+                <% data.forEach((participante=> { %>
+                <tr>
+                    <td><%= participante.nombre %></td>
+                    <td><%= participante.apellido %></td>
+                    <td><%= participante.DNI %></td>
+                </tr>
+                <% })) %>
+            <% } %>
+            </table>
+          </div>
+        </form>
+        <div class="btnShowContainer">
+            <a href="winners"><button class="btn-Show" href="winners">COMENZAR</button></a>
+        </div>
+    </div>
+</body>
+</html>

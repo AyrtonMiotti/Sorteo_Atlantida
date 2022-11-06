@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/css/style-form2.css">
+    <script src="https://kit.fontawesome.com/4763a3fcb5.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar"></div>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="overlay">
+                <form>
+                    <div class="con">
+                        <header class="head-form">
+                            <h2>Registrarse</h2>
+                            <p>Registrarse para participar en el sorteo</p>
+                        </header>
+                        <br>
+                        <div class="field-set">
+                            <span class="input-item">
+                                <i class="fa-sharp fa-solid fa-circle-user"></i>
+                            </span>
+                            <input class="form-input" id="txt-input" type="text" name="name" placeholder="Nombre" required>
+                            <br>
+
+                            <span class="input-item">
+                                <i class="fas fa-user-circle"></i>
+                            </span>
+                            <input class="form-input" id="txt-input" type="text" name="surname" placeholder="Apellido" required>
+                            <br>
+                            
+                            <span class="input-item">
+                                <i class="fas fa-id-card"></i>
+                            </span>
+                            <input class="form-input" id="txt-input" type="text" name="DNI" placeholder="DNI" required>
+                            <br>
+
+                            <span class="input-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <input class="form-input" id="txt-input" type="text" name="location" placeholder="Localidad" required>
+                            <br>
+                            
+                            <span class="input-item">
+                                <i class="fas fa-phone"></i>
+                            </span>
+                            <input class="form-input" id="txt-input" type="text" name="phone" placeholder="Teléfono" required>
+                            <br>
+                            <br>
+                            <button class="BtnRegister">Registrarse</button>
+                        </div>  
+                    </div>
+                </form>
+            </div>  
+        </div>
+        <div class="right-container">
+        <div class="tableContainer">
+            <div class="headerTable">
+                <div class="section1">
+                    <h3>Participantes</h3>
+                    <div class="btnShowContainer">
+                        <a href="winners"><button class="btn-Show" href="winners">SORTEAR</button></a>
+                    </div>
+                </div>
+                <div class="line1"></div>
+            </div>
+
+            <table id="participanTable">
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+              </tr>
+              <% if(data){ %>
+                <% data.forEach((participante=> { %>
+                <tr>
+                    <td><%= participante.nombre %></td>
+                    <td><%= participante.apellido %></td>
+                    <td><%= participante.DNI %></td>
+                </tr>
+                <% })) %>
+            <% } %>
+            </table>
+        </div>
+    </div>
+        </div>
+    </div>
+</body>
+</html>

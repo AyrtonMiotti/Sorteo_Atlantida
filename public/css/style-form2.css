@@ -35,8 +35,8 @@
 
 /*________________________________________________GENERAL________________________________________________*/
 body {
-    background-image: var(--bodyBgi1);
-    background-image: var(--bodyBgi2);
+    /*background-image: var(--bodyBgi1);
+    background-image: var(--bodyBgi2);*/
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: 'Vibur', cursive;

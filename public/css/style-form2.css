@@ -9,11 +9,12 @@
 :root{
     /*GENERAL*/
     --bodyBgi1: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-    --bodyBgi2: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    --bodyBgi2: linear-gradient(to top, #a8edea 0%, #fed6e3 100%); /*Change colo*/
     --letterColor: #3e403f;
 
     /*FORM*/
-    --bgForm: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+    /*--bgForm: linear-gradient(-225deg, #FFE6FA, #E3FDF5 50%);*/
+    --bgForm: linear-gradient(-225deg, #FFE6FA 0%, #E3FDF5 100%);
     --inputColor: #5E6472;
 
     /*TABLE*/

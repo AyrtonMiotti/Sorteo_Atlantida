@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="topFrameMain">
-        <img class="image" src="image1.png" alt="Image"> <!-- Cambiar -->
+        <img class="image" src="./resources/assets/image1.png" alt="Image"> <!-- Cambiar -->
         <div class="glass"><h1 class="tittle1">SORTEO ATLANTIDA FM</h1></div>
     </div>
     <div class="textContainer">
@@ -31,34 +31,29 @@
                 <th colspan="3" class="titulo">GANADORES</th>
             </tr>
             <tr>
-                <td>APELLIDO</td>
-                <td>NOMBRE</td>
-                <td>DNI</td>
+                <td id="borde">APELLIDO</td>
+                <td id="borde">NOMBRE</td>
+                <td id="borde">DNI</td>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <% if(data){ %>
+                <% data.forEach((participante=> { %>
+                <tr>
+                    <td id="borde"><%= participante.nombre %></td>
+                    <td id="borde"><%= participante.apellido %></td>
+                    <td id="borde"><%= participante.DNI %></td>
+                </tr>
+                <% })) %>
+            <% } %>
         </table>
+
         <table class="ganadoresANTERIORES">
             <tr>
                 <th colspan="3" class="titulo">GANADORES ANTERIORES</th>
             </tr>
             <tr>
-                <td>NOMBRE</td>
-                <td>APELLIDO</td>
-                <td>DNI</td>
+                <td id="borde">APELLIDO</td>
+                <td id="borde">NOMBRE</td>
+                <td id="borde">DNI</td>
             </tr>
             <% if(data){ %>
                 <% data.forEach((participante=> { %>
@@ -71,7 +66,14 @@
             <% } %>
         </table>
         <div>
-            <button class="participantes">PARTICIPANTES</button>
+            <button id="participantes" class="btn-Show">PARTICIPANTES</button>
+        </div>
+    </div>
+</body>
+</html>
+        </table>
+        <div>
+            <button id="participantes" class="btn-Show">PARTICIPANTES</button>
         </div>
     </div>
 </body>

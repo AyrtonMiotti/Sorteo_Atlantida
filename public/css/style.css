@@ -529,7 +529,62 @@ th{
     }
 }
 
+/*_______________________________________________________________________
+_________________________________PAGE 3_________________________________*/
 
+
+/*-----------TABLAS SORTEO----------*/
+.ganadores{
+    position: absolute;
+    left: 130vh;
+    top: 75vh;
+    border: #FFB606 5px solid;
+    height: 250px;
+    width: 70vh;
+    overflow: scroll;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+/*.ganadores tr th{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius:50px;
+	border-bottom-right-radius:50px;
+}*/ 
+
+.ganadoresANTERIORES{
+    position: absolute;
+    left: 130vh;
+    top: 120vh;
+    border: #FFB606 5px solid;
+    height: 250px;
+    width: 70vh;
+    overflow: scroll;
+}
+
+#borde {
+    border: #FFB606 5px solid;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #E15100;
+    background-color: #FFF;
+
+}
+
+.titulo{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+    background-color: #FFF;
+}
+
+#participantes{
+    position: absolute;
+    left: 65vh;
+    top: 150vh;
+}
+
+table{
+    border-radius: 10em;
+}
 
 
 /*background-image: linear-gradient(135deg, #ffff22 0, #fffb12 12.5%, #ffe506 25%, #ffce03 37.5%, #ffb606 50%, #f19f0d 62.5%, #e48a13 75%, #d87719 87.5%, #ce671e 100%);*/

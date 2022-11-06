@@ -9,7 +9,7 @@ router.get("/", partController.showParticipants);
 router.post("/add", partController.insertParticipant);
 router.get("/delete/:cod_par", partController.deleteParticipant);
 router.get("/edit/:cod_par", partController.editParticipant);
-router.get("/sortear", partController.raffle)
+router.get("/raffle", partController.raffle)
 router.get("/historialGanadores", partController.shoWinners);
 router.get("/deleteGanador/:cod_par", partController.deleteWinner);
 
@@ -18,7 +18,6 @@ router.get("/deleteGanador/:cod_par", partController.deleteWinner);
 
 /*Routes*/ 
 router.get('/', partController.showParticipants);
-router.get('/winners', partController.shoWinners);
 router.get('/winners2', partController.shoParticipants);
 
 

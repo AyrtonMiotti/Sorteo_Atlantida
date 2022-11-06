@@ -16,14 +16,15 @@ controller.showParticipants = (req, res) => {
 
 //SORTEAR || RAFFLE
 controller.raffle = (req, res) => {
-    connection.query("ACA VA LO Q HIZO LUDMI", (error, results) => {
+    connection.query('SELECT * FROM participantes WHERE DNI >= RAND() * ( SELECT MAX(DNI) FROM participantes ) ORDER BY DNI LIMIT 5;', (error, results) => {
         if (error) {
             res.json(error);
         } else {
             results.forEach((ganador) => {
-                connection.query('INSERT INTO historial_ganadores SET ?', [ganador])
+                connection.query('INSERT INTO winn_history SET ?', [ganador])
             })
-            res.render("", {data: results}); //nexthome?
+            console.log("LLegao")
+            res.render("showWinners", {data: results}); 
         }
     })
 } 
@@ -76,7 +77,7 @@ controller.deleteParticipant = (req, res) => {
 
 // VER || SHOW
 controller.shoWinners = (req, res) => {
-    connection.query("SELECT * FROM winn_history", (error, results) => { //Crear la tabla.
+    connection.query("SELECT * FROM winn_history", (error, results) => {
         if (error) {
             res.json(error);
         } else {

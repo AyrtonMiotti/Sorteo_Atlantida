@@ -11,6 +11,7 @@
     --bodyBgi1: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
     --bodyBgi2: linear-gradient(to top, #a8edea 0%, #fed6e3 100%); /*Change colo*/
     --letterColor: #3e403f;
+    --bodyForm: radial-gradient(circle at 0% 0%, #cef5d1 0, #c4f2d1 12.5%, #b2ebcc 25%, #9adfc3 37.5%, #79ceb6 50%, #54bdab 62.5%, #2bb1a6 75%, #00a9a6 87.5%, #00a5ab 100%);
 
     /*FORM*/
     /*--bgForm: linear-gradient(-225deg, #FFE6FA, #E3FDF5 50%);*/
@@ -27,22 +28,19 @@
     --secondary: rgb(61, 68, 73);
     --highlight-color: #3282b8;
 
-    --dt-status-available: greenyellow;
-    --dt-status-away: lightsalmon;
-    --dt-status-offline: lightgray;
-
     --bgColor-container: #2a3338;
 }
 
+
+
 /*________________________________________________GENERAL________________________________________________*/
 body {
-    /*background-image: var(--bodyBgi1);
-    background-image: var(--bodyBgi2);*/
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: 'Vibur', cursive;
     font-family: 'Abel', sans-serif;
     opacity: .95;
+    background-image: var(--bodyForm);
 }
 
 .navbar {
@@ -235,6 +233,11 @@ table tbody tr:nth-child(odd) {
 }
 table tbody tr:nth-child(even) {
 	background: none;
+}
+
+
+.participantRows:hover{
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 td{

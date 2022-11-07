@@ -413,21 +413,6 @@ th{
     background-color: var(--coloerLetter);
 }
 
-/*-----------TABLAS SORTEO----------*/
-.ganadores{
-    position: absolute;
-    left: 130vh;
-    top: 80vh;
-    border: #FFB606 10px solid;
-    border-radius: 10em;
-}  
-
-.ganadoresANTERIORES{
-    position: absolute;
-    left: 130vh;
-    top: 130vh;
-}
-
 
 
 /*_________________________________________RESPONSIVE_________________________________________*/
@@ -534,10 +519,15 @@ _________________________________PAGE 3_________________________________*/
 
 
 /*-----------TABLAS SORTEO----------*/
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
 .ganadores{
-    position: absolute;
-    left: 130vh;
-    top: 75vh;
     border: #FFB606 5px solid;
     height: 250px;
     width: 70vh;
@@ -553,9 +543,6 @@ _________________________________PAGE 3_________________________________*/
 }*/ 
 
 .ganadoresANTERIORES{
-    position: absolute;
-    left: 130vh;
-    top: 120vh;
     border: #FFB606 5px solid;
     height: 250px;
     width: 70vh;
@@ -576,15 +563,69 @@ _________________________________PAGE 3_________________________________*/
     background-color: #FFF;
 }
 
-#participantes{
-    position: absolute;
-    left: 65vh;
-    top: 150vh;
+.contenedorTabla{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 table{
     border-radius: 10em;
 }
 
+.ancientWinners-container{
+    margin-top: 35px;
+}
+
+.button4Container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*_________________________________________PAGE 3 RESPONSIVE_________________________________________*/
+@media only screen and (max-width: 600px) {
+    .main-container {
+        flex-direction: column-reverse;
+    }
+
+    .Text2Container {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contenedorTabla{
+        width: 100%;
+    }
+
+    .container-winners{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .ganadores{
+        width: 95%;
+    }
+
+    .ancientWinners-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;    
+        
+    }
+
+    .ganadoresANTERIORES{
+        width: 95%;
+    }
+
+    .button4Container .btn-Show{
+        margin: 50px 0;
+        width: 70%;
+        height: 60px;
+    }
+}
 
 /*background-image: linear-gradient(135deg, #ffff22 0, #fffb12 12.5%, #ffe506 25%, #ffce03 37.5%, #ffb606 50%, #f19f0d 62.5%, #e48a13 75%, #d87719 87.5%, #ce671e 100%);*/

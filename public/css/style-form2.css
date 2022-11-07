@@ -224,9 +224,10 @@ h3{
 table {
     border: var(--coloerLetter) 2px solid;
     border-collapse: collapse;
-    width: 483px;
+    width: 90%;
     height: 200px;
     overflow: scroll;
+    margin: 0px;
 }
 
 table tbody tr:nth-child(odd) {

@@ -10,6 +10,8 @@ CREATE TABLE participantes(
 
 CREATE TABLE winn_history(
     DNI INT,
+	nombre VARCHAR(20) NOT NULL,
+    apellido VARCHAR(20) NOT NULL,
     dateWin DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (DNI) REFERENCES participantes(DNI));
 

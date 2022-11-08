@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: "dpg-cdkraikgqg43pc4kgvg0-a",
     user: "root",
-    password: "",
+    password: "jGLR2SxQVN9iWJEfaGyqlSGGMs4vGqKW",
     database: "sorteo_atlantida",
 })
 

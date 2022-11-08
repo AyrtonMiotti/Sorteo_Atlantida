@@ -31,7 +31,7 @@ app.use('/', partRoutes);
 //____________________________________________________________
 
 
-app.listen(3309, (req, res)=>{
+app.listen(3309 || 3300, (req, res)=>{
     console.log("");
     console.log("-------------------------------------------");
     console.log("SERVER RUNNING IN http://localhost:3309");

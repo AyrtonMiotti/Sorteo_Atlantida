@@ -31,11 +31,12 @@ app.use('/', partRoutes);
 //____________________________________________________________
 
 
-app.listen(3306, (req, res)=>{
+app.listen(3310, (req, res)=>{
     console.log("");
     console.log("-------------------------------------------");
-    console.log("SERVER RUNNING IN http://localhost:5432");
+    console.log("SERVER RUNNING IN http://localhost:3309");
 });
+
 
 
 // https://www.solumedia.com.ar/radios/8682/index.html pagina radio 

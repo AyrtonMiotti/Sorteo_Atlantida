@@ -19,9 +19,11 @@
     --inputColor: #5E6472;
 
     /*TABLE*/
-    --color1:#E3FDF5;
-    --color2:#FFE6FA;
+    /*--color1:#E3FDF5;
+    --color2:#FFE6FA;*/
     --borderColor: #34A1EB;
+    --color1: #FFB606;
+    --color2: #ffb4068a;
 
     /*ACOMODAR*/
     --primary: white;
@@ -41,6 +43,9 @@ body {
     font-family: 'Abel', sans-serif;
     opacity: .95;
     background-image: var(--bodyForm);
+    background-image: radial-gradient(circle at 100% 0%, #e5fea6 0, #ebf598 8.33%, #f1eb89 16.67%, #f5e07a 25%, #f9d36c 33.33%, #fdc45e 41.67%, #ffb451 50%, #ffa347 58.33%, #ff9243 66.67%, #ff8143 75%, #ff7047 83.33%, #ff5e4f 91.67%, #ff4d59 100%);
+    
+
 }
 
 .navbar {
@@ -64,7 +69,8 @@ form {
     margin: 4% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
-    background-image: var(--bgForm)
+    background-image: var(--bgForm);
+    background-image: radial-gradient(circle at 100% 0%, #dbff84 0, #e3f972 8.33%, #ebee60 16.67%, #f1e24e 25%, #f7d43a 33.33%, #fbc525 41.67%, #ffb406 50%, #ffa200 58.33%, #ff9000 66.67%, #ff7d00 75%, #ff6800 83.33%, #ff5116 91.67%, #ff3527 100%);;
 }
 
 form .con {

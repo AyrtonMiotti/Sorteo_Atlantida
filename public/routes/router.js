@@ -24,6 +24,6 @@ router.get('/', (req, res) => {
 })
 
 router.get('/prueba', (req, res)=>{
-    return res.render('form');
+    return res.render('Chat');
 })
 module.exports = router;

@@ -19,25 +19,40 @@
             <div class="left-container">
                 <div class="leftUp-container">
                     <!-- Message Container-->
-                    <div class="outer-container">
-                        <div class="chat-container">
-                            <!-- Messages -->
-                             <div id="chatbox">
-                                <h5 id="chat-time"></h5>
-                                <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
-                             </div>
+                    <div class="full-chat-block">
+                        <div class="outer-container">
+                            <div class="chat-container">
+                                <!-- Messages -->
+                                <div id="chatbox">
+                                    <% if(time){ %>
+                                        <h5 id="chat-time"> <%= time %></h5>
+                                    <% } %>
+                                    <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="userText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="userText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="userText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="userText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="userText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                                    <p id="botStarterMessage" class="userText"><span>Loading...</span></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="text"><h3>Hola</h3></div>
                 </div> <!--Cont izq -->
                 <div class="leftBottom-container">
-                    <div type="button" class="txtBtn"><p class="txtBtn1">Muy bien</p></div>
-                    <div type="button" class="txtBtn"><p class="txtBtn2">Bien</p></div>
-                    <div type="button" class="txtBtn"><p class="txtBtn3">No tan bien</p></div>
-                    <div type="button" class="txtBtn"><p class="txtBtn4">Mal</p></div>
-                    <div type="button" class="txtBtn"><p class="txtBtn5">Prefiero no contestar</p></div>
-                    <div type="button" class="txtBtn"><p class="txtBtn6">Prefiero no decirlo</p></div>
-                    <div type="button" class="txtBtn"><p class="txtBtn7">Para el orto</p></div>
+                    <a href=""><button class="txtBtn2" >Muy bien</button></a>
+                    <a href=""><button class="txtBtn2" >Bien</button></a>
+                    <a href=""><button class="txtBtn2" >No tan bien</button></a>
+                    <a href=""><button class="txtBtn2" >Mal</button></a>
+                    <a href=""><button class="txtBtn2" >Prefiero no contestar</button></a>
+                    <a href=""><button class="txtBtn2" >Prefiero no decirlo</button></a>
+                    <a href=""><button class="txtBtn2" >Para el orto</button></a>
                 </div>
             </div>
             <div class="right-container">

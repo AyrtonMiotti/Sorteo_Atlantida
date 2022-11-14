@@ -14,6 +14,15 @@ router.get("/historialGanadores", partController.shoWinners);
 router.get("/deleteGanador/:cod_par", partController.deleteWinner);
 
 
+/*Routes*/ 
+router.get('/winners2', partController.shoParticipants);
+
+
+router.get('/', (req, res) => {
+    return res.render('home');
+})
+
+
 //Functions
 
 function getTime(){
@@ -32,14 +41,6 @@ function getTime(){
     let time = hours + ':' + minutes;
     return time;
 }
-
-/*Routes*/ 
-router.get('/winners2', partController.shoParticipants);
-
-
-router.get('/', (req, res) => {
-    return res.render('home');
-})
 
 router.get('/prueba', (req, res)=>{
     return res.render('Chat', {time:getTime()});

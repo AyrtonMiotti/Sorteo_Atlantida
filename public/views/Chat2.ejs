@@ -27,21 +27,29 @@
                                     <% if(time){ %>
                                         <h5 id="chat-time"> <%= time %></h5>
                                     <% } %>
+
                                     <p id="botStarterMessage" class="botText"><span>Hola sho soy el bot...</span></p>
                                     <p id="botStarterMessage" class="userText"><span>Hola sho soy el user...</span></p>
+
+                                    <% if(History){ %>
+                                        <p id="botStarterMessage" class="botText"><span> <%= History.txtBot %></span></p>
+                                    <% } %>
+
+                                    <% if(History){ %>
+                                        <p id="botStarterMessage" class="userText"><span><%= History.txtUser %></span></p>
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div> <!--Cont izq -->
                 <div class="leftBottom-container">
-                    <a href=""><button class="txtBtn2" >Muy bien</button></a>
-                    <a href=""><button class="txtBtn2" >Bien</button></a>
-                    <a href=""><button class="txtBtn2" >No tan bien</button></a>
-                    <a href=""><button class="txtBtn2" >Mal</button></a>
-                    <a href=""><button class="txtBtn2" >Prefiero no contestar</button></a>
-                    <a href=""><button class="txtBtn2" >Prefiero no decirlo</button></a>
-                    <a href=""><button class="txtBtn2" >Para el orto</button></a>
+                    <% if(data){ %>
+                        <% data.forEach((botones=> { %>
+                            <a href="chat"><button class="txtBtn2" > <%= botones.TextB %></button></a>
+                            
+                        <% })) %>
+                    <% } %>
                 </div>
             </div>
             <div class="right-container">

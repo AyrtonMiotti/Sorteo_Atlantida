@@ -173,7 +173,7 @@
     border-bottom-left-radius: 2px;
     max-width: 80%;
     margin-left: 10px;
-    animation: floatUp 5s forwards;
+    /*animation: floatUp 5s forwards;*/
     
 }
 
@@ -196,7 +196,7 @@
     border-bottom-right-radius: 2px;
     max-width: 80%;
     margin-left: 10px;
-    animation: floatUp 5s forwards;
+    /*animation: floatUp 5s forwards;*/
 }
 
 .chat-container{

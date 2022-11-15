@@ -1,17 +1,17 @@
 const mysql = require('mysql');
-const connection = mysql.createConnection({
+const connectionChat = mysql.createConnection({
     host: "localhost", //dpg-cdkraikgqg43pc4kgvg0-a
     user: "root",
     password: "password", //jGLR2SxQVN9iWJEfaGyqlSGGMs4vGqKW
-    database: "sorteo_atlantida",
+    database: "chat",
 })
 
-connection.connect((error)=>{
+connectionChat.connect((error)=>{
     if(error){
         console.log("El error de conexion es: " + error);
         return;
     }
-    console.log("> Conexion a la base de datos exitosa");
+    console.log("> Conexion a la base del chat exitosa \n-------------------------------------------\n");
 });
 
-module.exports = connection;
+module.exports = connectionChat;

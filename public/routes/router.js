@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const partController = require("../controllers/pController");
+const Chatcontroller = require("../controllers/chatController")
 
 router.get("/show-Participants", partController.showParticipants);
 
@@ -14,6 +15,26 @@ router.get("/historialGanadores", partController.shoWinners);
 router.get("/deleteGanador/:cod_par", partController.deleteWinner);
 
 
+// CHAT --->
+router.get('/prueba', (req, res)=>{
+    return res.render('Chat', {time:Chatcontroller.getTime()});
+})
+
+router.get('/chat', Chatcontroller.history)
+
+router.get("/prueba2", Chatcontroller.firstOptions);
+
+/*router.get('/prueba2', (req, res)=>{
+    return res.render('Chat-2', {Chatcontroller.firstOptions});
+})
+
+router.get("/mood%first", Chatcontroller.firstOptions);
+
+/*router.post("/mood%second%good", Chatcontroller.secondOptions);
+router.post("/mood%second%veryGood", Chatcontroller.secondOptions);
+router.post("/mood%second%bad", Chatcontroller.secondOptions);
+router.post("/mood%second%soBad", Chatcontroller.secondOptions);*/
+
 /*Routes*/ 
 router.get('/winners2', partController.shoParticipants);
 
@@ -25,24 +46,10 @@ router.get('/', (req, res) => {
 
 //Functions
 
-function getTime(){
-    let today = new Date();
-    hours = today.getHours();
-    minutes = today.getMinutes();
 
-    if(hours < 10){
-        hours = '0' + hours
-    }
 
-    if(minutes < 10){
-        minutes = '0' + minutes
-     }
 
-    let time = hours + ':' + minutes;
-    return time;
-}
 
-router.get('/prueba', (req, res)=>{
-    return res.render('Chat', {time:getTime()});
-})
+
+
 module.exports = router;

@@ -1,7 +1,6 @@
 const Chatcontroller = {};
 const ChatConnection = require('../database/dbChat');
 
-
 var OptionsButtons = [];
 var DialogCharacter = [];
 
@@ -46,7 +45,7 @@ Chatcontroller.firstOptions = (req, res) => {
         }
         else{
             console.log(results)
-            return res.render("Chat2", {time: getTime(), data: results});
+            return res.render("Chat-3", {time: getTime(), data: results});
         }
     })
 }
@@ -58,7 +57,7 @@ Chatcontroller.history = (req, res) =>{
         }
         else{
             console.log(results);
-            res.redirect("/Chat2");
+            return res.render("Chat-3", {time: getTime(), History:results});
         }
     })
 }

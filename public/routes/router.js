@@ -22,7 +22,7 @@ router.get('/prueba', (req, res)=>{
 
 router.get('/chat', Chatcontroller.history)
 
-router.get("/prueba2", Chatcontroller.firstOptions);
+router.get("/prueba2", Chatcontroller.firstOptions, Chatcontroller.history);
 
 /*router.get('/prueba2', (req, res)=>{
     return res.render('Chat-2', {Chatcontroller.firstOptions});
